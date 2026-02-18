@@ -32,7 +32,7 @@ import qSwitchedLaserImg from "../../assets/qswitchedlaser.jpg";
 import ndyagLaserImg from "../../assets/ndyaglaser.jpg";
 import diodeLaserImg from "../../assets/laser.jpg";
 import rfFacialsImg from "../../assets/radiofrequency.jpg";
-import botoxImg from "../../assets/botox.jpg";
+import botoxImg from "../../assets/Botox.jpg";
 import dermaFillersImg from "../../assets/dermafillers.jpg";
 import facePrpImg from "../../assets/faceprp.jpg";
 import hydrafacialImg from "../../assets/hydrafacial (2).jpg";
