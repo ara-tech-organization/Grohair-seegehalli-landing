@@ -330,198 +330,189 @@
   position: relative;
 }
 
-.sectionNav {
-  position: absolute;
-  right: 0;
+/* Treatment Panel: List + Detail Layout */
+.treatmentPanel {
   display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.treatmentPanelReversed {
+  flex-direction: row-reverse;
+}
+
+.treatmentList {
+  flex: 0 0 280px;
+  position: relative;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.treatmentListInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #d32f2f transparent;
+}
+
+.treatmentListInner::-webkit-scrollbar {
+  width: 4px;
+}
+
+.treatmentListInner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.treatmentListInner::-webkit-scrollbar-thumb {
+  background: #d32f2f;
+  border-radius: 4px;
+}
+
+.treatmentListInner::-webkit-scrollbar-thumb:hover {
+  background: #b71c1c;
+}
+
+.treatmentPanelReversed .treatmentList {
+  border-right: none;
+  border-left: none;
+}
+
+.treatmentListItem {
+  padding: 18px 24px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #eee;
+  font-family: inherit;
+  position: relative;
+}
+
+.treatmentListItem:last-child {
+  border-bottom: none;
+}
+
+.treatmentListItem:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.treatmentListItemActive {
+  background: #d32f2f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.treatmentListItemActive:hover {
+  background: #b71c1c;
+  color: #fff;
+}
+
+.treatmentListItemActive::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #b71c1c;
+}
+
+.treatmentDetail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInDetail 0.4s ease-out;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background: #fff;
+}
+
+.treatmentDetailImage {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 20px 0;
+}
+
+.treatmentDetailImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.treatmentDetailContent {
+  padding: 24px 32px 28px;
+}
+
+.treatmentDetailTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.treatmentDetailDescription {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.treatmentBenefits {
+  margin-top: 8px;
+}
+
+.benefitsHeading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.benefitsGrid {
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.sectionNavBtn {
-  width: 36px;
-  height: 36px;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-}
-
-.sectionNavBtn:hover {
-  border-color: #d32f2f;
+.benefitTag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fef2f2;
   color: #d32f2f;
-}
-
-/* Hair Treatments Grid */
-.treatmentsGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-}
-
-.treatmentCard {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInCard 0.6s ease-out forwards;
-}
-
-.treatmentsSection.visible .treatmentCard {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.treatmentImageWrapper {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-}
-
-.treatmentImageWrapper::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-  pointer-events: none;
-}
-
-.treatmentImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.treatmentCard:hover .treatmentImage {
-  transform: scale(1.05);
-}
-
-.treatmentImageTitle {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  color: #fff;
+  border: 1px solid #fecaca;
+  border-radius: 20px;
   font-size: 13px;
-  font-weight: 600;
-  z-index: 1;
-  text-align: center;
-  padding: 0 8px;
-}
-
-.treatmentTextContent {
-  padding: 15px 20px;
-}
-
-.treatmentDescription {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 6px;
-}
-
-.treatmentReadMore {
-  font-size: 12px;
-  color: #d32f2f;
-  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
-.treatmentReadMore:hover {
-  color: #b71c1c;
-}
-
-/* Skin Treatments Grid */
-.skinTreatmentsGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  margin-bottom: 30px;
-}
-
-.skinTreatmentCard {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.treatmentsSection.visible .skinTreatmentCard {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.skinTreatmentImageWrapper {
-  position: relative;
-  height: 180px;
-  overflow: hidden;
-}
-
-.skinTreatmentImageWrapper::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-  pointer-events: none;
-}
-
-.skinTreatmentImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.skinTreatmentCard:hover .skinTreatmentImage {
-  transform: scale(1.05);
-}
-
-.skinTreatmentImageTitle {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  z-index: 1;
-  text-align: center;
-  padding: 0 8px;
-}
-
-.skinTreatmentInfo {
-  padding: 15px 20px 0;
-}
-
-.skinTreatmentDescription {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 6px;
-  line-height: 1.5;
-}
-
-.readMoreLink {
-  font-size: 12px;
-  color: #d32f2f;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.readMoreLink:hover {
-  color: #b71c1c;
+@keyframes fadeInDetail {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .viewAllBtn {
@@ -558,30 +549,8 @@
 }
 
 .faqsContainer {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-
-.faqColumn {
-  padding: 0;
-}
-
-.faqTitle {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.faqHighlightRed {
-  color: #d32f2f;
-}
-
-.faqHighlightBlue {
-  color: #d32f2f;
 }
 
 .faqList {
@@ -866,9 +835,16 @@
     padding: 60px 40px;
   }
 
-  .treatmentsGrid,
-  .skinTreatmentsGrid {
-    grid-template-columns: repeat(3, 1fr);
+  .treatmentList {
+    flex: 0 0 220px;
+  }
+
+  .treatmentDetailImage img {
+    max-height: 350px;
+  }
+
+  .treatmentDetailContent {
+    padding: 20px 24px;
   }
 
   .beforeAfterGrid {
@@ -903,13 +879,57 @@
     padding: 14px 16px;
   }
 
-  .treatmentsGrid,
-  .skinTreatmentsGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .treatmentPanel,
+  .treatmentPanelReversed {
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .faqsContainer {
-    grid-template-columns: 1fr;
+  .treatmentList {
+    flex: none;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: none;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .treatmentPanelReversed .treatmentList {
+    order: -1;
+  }
+
+  .treatmentListItem {
+    white-space: nowrap;
+    padding: 14px 20px;
+    font-size: 13px;
+    border-bottom: none;
+    border-right: 1px solid #eee;
+  }
+
+  .treatmentListItem:last-child {
+    border-right: none;
+  }
+
+  .treatmentListItemActive::before {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 3px;
+  }
+
+  .treatmentDetailImage img {
+    max-height: 280px;
+  }
+
+  .treatmentDetailContent {
+    padding: 20px;
+  }
+
+  .treatmentDetailTitle {
+    font-size: 18px;
   }
 
   .testimonialsContainer {
@@ -927,10 +947,6 @@
   .sectionHeader {
     flex-direction: column;
     gap: 15px;
-  }
-
-  .sectionNav {
-    position: static;
   }
 }
 
@@ -960,19 +976,34 @@
     font-size: 24px;
   }
 
-  .treatmentsGrid,
-  .skinTreatmentsGrid,
   .beforeAfterGrid {
     grid-template-columns: 1fr;
   }
 
-  .treatmentImageWrapper,
-  .skinTreatmentImageWrapper {
-    height: 180px;
+  .treatmentListItem {
+    padding: 12px 16px;
+    font-size: 12px;
   }
 
-  .faqColumn {
-    padding: 15px;
+  .treatmentDetailImage img {
+    max-height: 220px;
+  }
+
+  .treatmentDetailContent {
+    padding: 16px;
+  }
+
+  .treatmentDetailTitle {
+    font-size: 16px;
+  }
+
+  .treatmentDetailDescription {
+    font-size: 13px;
+  }
+
+  .benefitTag {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 
   .testimonialTitle {
@@ -1024,13 +1055,12 @@ html {
   align-items: start;
 }
 
-/* Left Column: Logo & Address */
+/* Left Column: Logo & CTA */
 .footerLeft {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  flex: 0 0 auto;
-  /* width: 450px; */
+  gap: 20px;
+  flex: 1;
 }
 
 .footerLogo {
@@ -1042,20 +1072,63 @@ html {
   width: auto;
 }
 
-.footerAddress {
-  display: flex;
-  gap: 12px;
-  color: #ccc;
-  font-size: 14px;
-  line-height: 1.7;
-  align-items: flex-start;
-  max-width: 450px;
+.footerCtaTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.4;
 }
 
-.footerAddressIcon {
-  color: #d32f2f;
+.footerCtaButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footerCtaBtn {
+  background: #d32f2f;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footerCtaBtn:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+}
+
+.footerCtaBtnOutline {
+  background: transparent;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: 1px solid #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footerCtaBtnOutline:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.footerCtaBtnOutline svg {
   flex-shrink: 0;
-  margin-top: 4px;
 }
 
 /* Right Column: Map & Contact */
@@ -1064,7 +1137,7 @@ html {
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
-  flex: 0 0 auto;
+  flex: 1;
 }
 
 /* Map */
@@ -1072,13 +1145,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .footerMap {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  width: 350px;
+  width: 100%;
 }
 
 .footerMap iframe {
@@ -1183,10 +1257,6 @@ html {
     gap: 40px;
     padding: 0 40px 40px;
   }
-
-  .footerMap {
-    width: 300px;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -1201,7 +1271,7 @@ html {
     text-align: center;
   }
 
-  .footerAddress {
+  .footerCtaButtons {
     justify-content: center;
   }
 
@@ -1230,7 +1300,6 @@ html {
 
   .footerMap {
     width: 100%;
-    max-width: 350px;
   }
 
   .footerBottom {
@@ -1250,8 +1319,8 @@ html {
     height: 70px;
   }
 
-  .footerAddress {
-    font-size: 13px;
+  .footerCtaTitle {
+    font-size: 18px;
   }
 
   .socialIcon {

@@ -4,38 +4,55 @@ import { ChevronDown, Phone, Mail, MapPin, PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import styles from "./GrohairLanding.module.css";
 
-// Hair treatment images
-import stemXPro from "../../assets/stem-x-pro.webp";
-import mesotherapy from "../../assets/mesotheraphy.jpg";
-import oxygenTherapy from "../../assets/oxgen-laser-therapy.webp";
-import scalpMicropigmentation from "../../assets/ScalpMicropigmentation.jpg";
-import eyebrowTransplant from "../../assets/eyebrow-transplant.webp";
+// Hair treatment images (webp)
+import mesoImg from "../../assets/meso.webp";
+import oxyImg from "../../assets/oxy.webp";
+import prpImg from "../../assets/prp.webp";
+import hairTransImg from "../../assets/HairTrans.webp";
+import fueImg from "../../assets/fue.webp";
+import eyebrowImg from "../../assets/eyebrow.webp";
+import beardImg from "../../assets/beard.webp";
+import mustacheImg from "../../assets/mustache.webp";
+import scalpImg from "../../assets/scalp.webp";
+import partialAlopeciaImg from "../../assets/parti-alopica-1.webp";
+import totalAlopeciaImg from "../../assets/full-alopica.webp";
+import microbladingImg from "../../assets/microblading.webp";
+import eyelashImg from "../../assets/eyelash.webp";
+import basicThinPolyImg from "../../assets/basic-thin-poly.webp";
+import celebrityChoiceImg from "../../assets/celebrity-choice.webp";
+import fullLaceImg from "../../assets/full-lace.webp";
+import hairExImg from "../../assets/hairEx.webp";
+import menFullCapImg from "../../assets/men-full-cap.webp";
+import womenFullCapImg from "../../assets/women-full-cap.webp";
 
-import microblading from "../../assets/Microblading.jpg";
-import wartRemoval from "../../assets/Wart Removal.jpg";
-import laserReduction from "../../assets/LaserReduction.jpg";
-import hydrafacial from "../../assets/Hydrafacial.jpg";
-import qSwitch from "../../assets/Q-Switch.jpg";
-import botox from "../../assets/Botox.jpg";
-import rfAntiFacial from "../../assets/RF Anti Aging Facial.jpg";
-import skinBrightening from "../../assets/Skin brightening.jpg";
+// Skin treatment images
+import skinPeelsImg from "../../assets/skinpeels.jpg";
+import microdermabrasionImg from "../../assets/microdermabrasion.jpg";
+import qSwitchedLaserImg from "../../assets/qswitchedlaser.jpg";
+import ndyagLaserImg from "../../assets/ndyaglaser.jpg";
+import diodeLaserImg from "../../assets/laser.jpg";
+import rfFacialsImg from "../../assets/radiofrequency.jpg";
+import botoxImg from "../../assets/botox.jpg";
+import dermaFillersImg from "../../assets/dermafillers.jpg";
+import facePrpImg from "../../assets/faceprp.jpg";
+import hydrafacialImg from "../../assets/hydrafacial (2).jpg";
 
 // Before/After images
 import ba1 from "../../assets/BeforeAfter/b-a-01.webp";
 import ba2 from "../../assets/BeforeAfter/b-a-02.webp";
 import ba3 from "../../assets/BeforeAfter/b-a-03.webp";
 import ba4 from "../../assets/BeforeAfter/b-a-04.webp";
-import testimonial from "../../assets/stem-x-pro.webp";
+
 import logo from "../../assets/logo.png";
 import footerLogo from "../../assets/footer.png";
 
 const GrohairLanding = () => {
   const navigate = useNavigate();
-  const [activeHairFaq, setActiveHairFaq] = useState(0);
-  const [activeSkinFaq, setActiveSkinFaq] = useState(null);
+  const [activeHairFaq, setActiveHairFaq] = useState(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState({});
-  const [currentSkinIndex, setCurrentSkinIndex] = useState(0);
+  const [selectedHairTreatment, setSelectedHairTreatment] = useState(0);
+  const [selectedSkinTreatment, setSelectedSkinTreatment] = useState(0);
   // Form state
   const [formData, setFormData] = useState({
     name: "",
@@ -72,98 +89,194 @@ const GrohairLanding = () => {
 
   const hairTreatments = [
     {
-      title: "Stem X Pro",
-      description:
-        "An advanced STEM learning platform using interactive modules and AI tools to build critical thinking and innovation skills.",
-      image: stemXPro,
+      title: "Meso Therapy",
+      description: "Hair Mesotherapy is a minimally invasive treatment where a customized blend of vitamins, amino acids, peptides, and hyaluronic acid is delivered into the scalp through microinjections to nourish hair follicles and promote thicker, healthier hair growth. Recommended every 15 days for 10\u201312 sessions for optimal results.",
+      image: mesoImg,
+      benefits: ["Reduces hair fall", "Improves hair thickness", "Supports follicle health", "No downtime"],
     },
     {
-      title: "Mesotherapy",
-      description:
-        "A non-surgical treatment that delivers vitamins and nutrients to improve skin health and support hair restoration.",
-      image: mesotherapy,
+      title: "Oxygen Laser Therapy (OLT)",
+      description: "Oxygen Laser Therapy is a non-invasive treatment that uses advanced light technology to stimulate scalp circulation, improve oxygen delivery, and support healthy hair follicle function. It is safe, painless, and suitable for both men and women. OLT is also beneficial after hair transplantation to support healing and promote early growth.",
+      image: oxyImg,
+      benefits: ["Reduces hair fall", "Strengthens thin hair", "Improves scalp oxygenation", "Balances scalp health", "Stimulates dormant follicles"],
     },
     {
-      title: "Oxygeneo Therapy",
-      description:
-        "A non-invasive oxygen-based skin treatment that boosts circulation, collagen, and overall skin glow.",
-      image: oxygenTherapy,
+      title: "PRP Pro+",
+      description: "PRP Pro+ is an advanced hair restoration treatment that uses the healing power of your own platelets to stimulate hair follicles and promote natural regrowth. The concentrated plasma, rich in growth factors, is carefully injected into the scalp to strengthen miniaturizing and newly implanted follicles. For optimal results, 8\u201310 sessions are typically recommended at 20-day intervals.",
+      image: prpImg,
+      benefits: ["Controls hair fall", "Stimulates natural regrowth", "Strengthens hair strands", "Non-surgical procedure", "Uses your body\u2019s own natural growth factors"],
     },
     {
-      title: "Scalp Micropigmentation",
-      description:
-        "A non-surgical procedure that adds natural-looking pigment to the scalp to create the appearance of fuller hair.",
-      image: scalpMicropigmentation,
+      title: "Basic Hair Transplant FUE",
+      description: "FUE (Follicular Unit Extraction) is a minimally invasive hair restoration procedure where healthy hair follicles are carefully extracted from the donor area and precisely implanted into thinning or balding areas. Performed under local anesthesia, the procedure is typically completed within a day and requires minimal downtime.",
+      image: hairTransImg,
+      benefits: ["Natural, permanent hair growth", "Minimally invasive procedure", "No major cuts or stitches", "Minimal downtime", "Uses your own hair follicles", "One-day procedure"],
     },
     {
-      title: "Hair Transplant",
-      description:
-        "A surgical procedure that restores hair by transplanting healthy follicles to thinning or bald areas.",
-      image: eyebrowTransplant,
+      title: "Percutaneous FUE",
+      description: "Percutaneous FUE is an advanced version of the FUE hair transplant technique performed using specialized micro-motor technology. Ultra-fine punches (0.7\u20130.8 mm) are used to carefully extract and implant grafts with precise control over depth, direction, and density \u2014 ensuring natural-looking, high-density results.",
+      image: fueImg,
+      benefits: ["Precise control of depth, direction & density", "High graft survival rate", "Minimally invasive", "No major cuts or stitches", "One-day procedure", "Faster recovery", "High-density natural results"],
+    },
+    {
+      title: "Eyebrow Transplant",
+      description: "Eyebrows are your facial landmark. Why cover it up with pencils and liners when you can restore uniformed thickness with Eyebrow Transplant. Removing suitable hair follicles from the area around your ear and implanting it to your existing brow line helps you achieve a fuller looking eyebrow regrowth.",
+      image: eyebrowImg,
+      benefits: ["Achieve thicker brows", "Encourage hair regrowth", "No Visible Scars", "Attain Natural Look", "Safe and Effective"],
+    },
+    {
+      title: "Beard Transplant",
+      description: "Men who have patchy beard or thin facial hair have a solution to undergo beard transplant. Healthy hair follicles are extracted from the donor area and then implanted to the facial skin with two extensive treatments \u2014 Basic beard transplant and Percutaneous Beard Transplant.",
+      image: beardImg,
+      benefits: ["Improves Density", "Fill in bald patches", "Natural Looking Facial Hair", "No minor linear scarring", "Permanent Solution"],
+    },
+    {
+      title: "Moustache Transplant",
+      description: "With successful advances in hair transplant techniques, restoring moustache hair is now possible with Moustache Transplant. Men who could not grow moustache due to injuries or having low density can achieve thick moustache line with the grafts extracted from the donor site.",
+      image: mustacheImg,
+      benefits: ["Covers moustache Patches", "Highlight Masculine Features", "Can Trim or Shave the transplanted hair", "Get Natural Results", "No Visible Scars"],
+    },
+    {
+      title: "Scalp Micropigmentation (SMP)",
+      description: "Scalp Micropigmentation is a non-invasive procedure that creates the appearance of fuller hair by depositing specialized pigments into the scalp using advanced micro-precision technology. It is an effective solution for hair thinning, alopecia, and male or female pattern baldness. Each procedure lasts approximately 4\u20135 hours.",
+      image: scalpImg,
+      benefits: ["Creates a natural, fuller look", "Immediate visible improvement", "Safe for existing hair", "Non-surgical procedure", "Effectively camouflages hair loss"],
+    },
+    {
+      title: "Partial Alopecia",
+      description: "The main characteristic of the patchy type of alopecia areata is one or more coin-sized patches of hair loss on the skin or body. If this condition expands, it may become alopecia totalis or alopecia universalis.",
+      image: partialAlopeciaImg,
+      benefits: ["Arrests Hair fall", "Controls scalp sebum production", "Maintains the scalp PH level", "Stimulate dormant hair follicles", "Improves hair quality"],
+    },
+    {
+      title: "Total Alopecia",
+      description: "Alopecia totalis is a chronic condition of complete hair loss of the scalp, which affects a small percentage of patients with alopecia areata. Treatment outcomes are best when this disease is recognized and treated early in its course.",
+      image: totalAlopeciaImg,
+      benefits: ["Arrests Hair fall", "Controls scalp sebum production", "Maintains the scalp PH level", "Stimulate dormant hair follicles", "Improves hair quality"],
+    },
+    {
+      title: "Microblading",
+      description: "Women believe Eyebrows enhance their facial identity. Microblading accounts for all your brow desires by implanting pigments as short strokes into the superficial layers of the skin in order to resemble natural eyebrow hairs. Procedure timing 3 hours. 1 main procedure + 2 follow up sessions.",
+      image: microbladingImg,
+      benefits: ["Reshape your brow line", "Fuller & Denser Look", "Won\u2019t stop Natural Growth", "Quick Procedure", "Get your Dream Eyebrows"],
+    },
+    {
+      title: "Eyelash Lift & Extensions",
+      description: "Eyelash Lift and Extensions are aesthetic procedures designed to enhance the appearance of your natural lashes. A lash lift gently elevates and curls your existing lashes. Lash extensions add length and density using carefully applied, semi-processed natural fibers for a fuller yet natural finish. The procedure typically takes about 1 hour.",
+      image: eyelashImg,
+      benefits: ["Enhances eye definition", "Fuller and more refined appearance", "Natural-looking results", "Non-surgical procedure", "Immediate visible improvement"],
+    },
+    {
+      title: "Basic Thin Poly",
+      description: "The basic thin poly base is exactly what you\u2019re looking for! AdGrohair offers the finest of the thin poly base systems which suits your scalp, including some of the finest thin base hair systems on the market. The duration the systems are the longest in the entire class and offers good volume and density post final cut and design.",
+      image: basicThinPolyImg,
+      benefits: ["Lightweight and comfortable", "Natural scalp appearance", "Good volume and density", "Long-lasting durability"],
+    },
+    {
+      title: "Celebrity Choice",
+      description: "AdGroHair\u2019s Celebrity Choice Hair Systems are advanced non-surgical hair replacement solutions designed to create a natural-looking hairline and seamless appearance. Available options include PU with lace front, mono with lace front, and thin skin with lace front designs \u2014 offering a balance of realism, comfort, and durability.",
+      image: celebrityChoiceImg,
+      benefits: ["Natural-looking hairline", "Customized base options", "Comfortable and lightweight design", "Durable and long-lasting", "Non-surgical solution", "Versatile styling options"],
+    },
+    {
+      title: "Full Lace",
+      description: "The Full Lace Hair System is one of the most preferred non-surgical hair replacement options worldwide. Crafted with a lightweight and breathable lace base, it allows proper airflow to the scalp, ensuring comfort throughout the day. The lace construction provides a seamless hairline and natural movement.",
+      image: fullLaceImg,
+      benefits: ["Highly natural hairline appearance", "Lightweight and breathable design", "Comfortable for daily wear", "Seamless blending with existing hair", "Flexible styling options"],
+    },
+    {
+      title: "Hair Extension",
+      description: "Remy Hair Extensions are crafted from high-quality, virgin human hair with intact and aligned cuticles to ensure a smooth, natural appearance. These extensions are an effective solution for adding volume, length, or style enhancement while blending seamlessly with your existing hair.",
+      image: hairExImg,
+      benefits: ["100% high-quality human hair", "Soft, smooth, and natural texture", "Adds volume and length instantly", "Blends seamlessly with natural hair"],
+    },
+    {
+      title: "Men Full Cap",
+      description: "The Men Full Cap Hair System is a complete coverage solution designed for individuals experiencing extensive hair loss, including conditions such as alopecia totalis, alopecia universalis, or hair loss due to medical treatments like chemotherapy. It is fully customized to match the scalp size, shape, and specific hair loss pattern.",
+      image: menFullCapImg,
+      benefits: ["Full scalp coverage", "Designed for advanced hair loss conditions", "Customized fit and design", "Natural appearance"],
+    },
+    {
+      title: "Women Full Cap",
+      description: "The Women Full Cap Hair System is a complete coverage solution designed for women experiencing extensive hair loss. Available in lengths ranging from 14 to 22 inches, the system allows versatile styling, including braids, ponytails, and various customized hairstyles.",
+      image: womenFullCapImg,
+      benefits: ["Full scalp coverage", "Designed for medical hair loss conditions", "Custom fit and natural appearance", "Available in multiple lengths", "Allows flexible styling options", "Non-surgical and comfortable solution"],
     },
   ];
 
   const skinTreatments = [
     {
-      title: "Microblading",
-      description:
-        "A semi-permanent eyebrow treatment that uses fine, hair-like strokes to create fuller, natural-looking brows.",
-      image: microblading,
+      title: "Skin Peels",
+      description: "We offer a range of advanced, medically guided skin peels designed to improve skin texture, reduce pigmentation, control acne, and restore natural radiance. Our treatments include Glycolic Peel, ArgiPeel Exfoliating Peel, Ferulac Peel Booster System, Lacti Peel, Amelan Peel, Nomelan Peel, Yellow Peel, and Salicylic Acid Peel.",
+      image: skinPeelsImg,
+      benefits: ["Improves skin texture", "Reduces pigmentation", "Controls acne", "Restores natural radiance"],
     },
     {
-      title: "Wart Removal",
-      description:
-        "Warts can be treated with salicylic acid, cryotherapy, laser therapy, or minor surgery with minimal downtime.",
-      image: wartRemoval,
+      title: "Microdermabrasion",
+      description: "Microdermabrasion is a dermatological procedure that gently removes the top layer of skin. It is used to even out skin tones, fade acne scars, and brighten a dull complexion. The procedure takes about 30 minutes and may be combined with other treatments.",
+      image: microdermabrasionImg,
+      benefits: ["Evens out skin tone", "Fades acne scars", "Brightens complexion", "Quick 30-minute procedure"],
     },
     {
-      title: "Laser Hair Reduction",
-      description:
-        "A safe, long-lasting treatment that uses lasers to weaken hair follicles, reducing unwanted hair with minimal discomfort.",
-      image: laserReduction,
+      title: "Q-Switched Lasers",
+      description: "At GloSkin, Q-Switched Laser technology is used to effectively treat pigmentation, melasma, sun damage, and various pigmented lesions such as age spots, freckles, sunspots, and certain birthmarks. The laser precisely targets excess melanin in the skin without affecting surrounding tissue. It can also be customized for safe tattoo removal.",
+      image: qSwitchedLaserImg,
+      benefits: ["Targets pigmentation & melasma", "Stimulates collagen production", "Improves acne scars", "Refines enlarged pores"],
+    },
+    {
+      title: "Nd-YAG Laser",
+      description: "Nd-YAG laser is a newer technique of laser hair removal. Its biggest advantage is that it usually works on all types of skin, in particular, even on tanned skin and on darker skin. For optimum results, 6-8 sessions are recommended at a gap of 1 month between each session.",
+      image: ndyagLaserImg,
+      benefits: ["Works on all skin types", "Safe for tanned & darker skin", "Permanent hair reduction", "Clinically proven technology"],
+    },
+    {
+      title: "Diode Laser",
+      description: "Diode lasers use a single wavelength of light that has a high absorption rate in melanin. It incorporates skin cooling to protect the surface of the skin. As the melanin heats up it destroys the root and blood flow to the follicle and disables the hair permanently.",
+      image: diodeLaserImg,
+      benefits: ["High melanin absorption", "Built-in skin cooling", "Permanent hair removal", "Safe for all skin types"],
+    },
+    {
+      title: "RF Facials",
+      description: "Radiofrequency (RF) technology uses high-frequency radio waves to safely and precisely remove skin lesions such as moles, warts, skin tags, freckles, and DPNs. Compared to traditional scalpel excision, RF treatment generates minimal heat and reduces impact on surrounding tissues, promoting faster healing.",
+      image: rfFacialsImg,
+      benefits: ["Precise lesion removal", "Minimal bleeding", "Faster healing", "Safe and effective"],
+    },
+    {
+      title: "Botox (Botulinum Toxins)",
+      description: "Botox from Allergan is one of the widely known brands of Botulinum toxins injections along with Dysport from Galderma. Botulinum toxins are neurotoxins that affect nerves and cause muscle relaxation. It halts the ageing process of the muscles and smoothens out wrinkles and dynamic lines. The effects generally last from 3 to 5 months.",
+      image: botoxImg,
+      benefits: ["Smoothens wrinkles", "Relaxes dynamic lines", "Quick procedure", "Results last 3-5 months"],
+    },
+    {
+      title: "Dermal Fillers",
+      description: "Dermal fillers are injections that plump up wrinkles and smooth lines on your face. We usually inject dermal fillers in the areas around your eyes, mouth and nose. Results are noticeable right away and recovery time is minimal. We use Dermal fillers from Allergan as Juvederm and also Restylane from Galderma.",
+      image: dermaFillersImg,
+      benefits: ["Instant visible results", "Restores facial volume", "Minimal recovery time", "Long-lasting effects"],
+    },
+    {
+      title: "Face PRP",
+      description: "A Platelet Rich Plasma (PRP) face treatment, also known as a Vampire facial, is an advanced skin treatment which is great for skin rejuvenation. It uses your own blood platelets to stimulate new cell growth, helping to improve your complexion and skin texture. PRP therapy stimulates the production of collagen and new skin cells.",
+      image: facePrpImg,
+      benefits: ["Stimulates collagen production", "Uses your own blood platelets", "Improves skin texture", "Natural skin rejuvenation"],
     },
     {
       title: "HydraFacial",
-      description:
-        "A non-invasive treatment that cleanses, exfoliates, and hydrates the skin while infusing it with nourishing serums.",
-      image: hydrafacial,
-    },
-    {
-      title: "Q-Switch",
-      description:
-        "A non-invasive treatment that targets pigmentation, acne scars, and signs of aging by breaking down melanin.",
-      image: qSwitch,
-    },
-    {
-      title: "Botox",
-      description:
-        "A non-invasive treatment that uses short, intense laser pulses to target pigmentation, acne scars, and signs of aging.",
-      image: botox,
-    },
-    {
-      title: "RF Anti Aging Facial",
-      description:
-        "Uses radio waves to stimulate collagen, tighten skin, and reduce wrinkles with no downtime.",
-      image: rfAntiFacial,
-    },
-    {
-      title: "Skin Brightening Treatment",
-      description:
-        "Reduces dark spots, pigmentation, and dullness while nourishing skin for a brighter, healthier complexion.",
-      image: skinBrightening,
+      description: "HydraFacial is an advanced skin treatment that combines cleansing, exfoliation, gentle chemical peeling, extraction, and deep hydration in a single session using patented vortex technology. Suitable for all skin types, HydraFacial helps improve enlarged pores, fine lines, acne, and dullness.",
+      image: hydrafacialImg,
+      benefits: ["Deep cleansing & exfoliation", "Suitable for all skin types", "Improves pores & fine lines", "Instant hydration & glow"],
     },
   ];
 
-  const hairFaqs = [
+  const faqs = [
     {
       question: "What treatments do you offer for hair loss?",
       answer:
-        "We offer a range of advanced hair restoration treatments, including Hair Transplant (FUE & FUT), PRP (Platelet-Rich Plasma) Therapy, Mesotherapy, Scalp Micropigmentation, and Low-Level Laser Therapy (LLLT).",
+        "We offer advanced hair restoration treatments including Hair Transplant (FUE), PRP (Platelet-Rich Plasma) Therapy, Mesotherapy, Scalp Micropigmentation, CHS (Comprehensive Hair Solutions), and Oxygen Laser Therapy (OLT).",
     },
     {
       question: "How does a hair transplant work?",
       answer:
-        "Hair transplant involves moving hair follicles from a donor area to the balding area. We use advanced FUE and FUT techniques for natural-looking results.",
+        "Hair transplant involves relocating healthy hair follicles from the donor area to areas experiencing hair thinning or baldness. We use advanced FUE techniques to deliver precise, natural-looking results.",
     },
     {
       question: "Is hair transplantation a permanent solution?",
@@ -181,37 +294,34 @@ const GrohairLanding = () => {
         "PRP therapy uses your own blood platelets to stimulate hair follicles, promoting natural hair growth and thickness.",
     },
     {
-      question: "Are there any side effects of hair treatments?",
+      question: "Is the procedure safe?",
       answer:
-        "Side effects are minimal and may include temporary redness or swelling that subsides within a few days.",
+        "Absolutely. Our treatments are designed with safety, precision, and patient comfort as top priorities. Performed by experienced professionals, the procedures are minimally invasive and tailored to ensure a smooth recovery experience.",
     },
     {
       question: "How much does a hair transplant cost at GroHair?",
       answer:
-        "Cost varies based on the extent of treatment needed. We offer personalized consultations to provide accurate pricing.",
+        "We know choosing a hair transplant is both a personal and financial decision. The cost depends on your specific hair condition and treatment plan. That\u2019s why we offer a detailed consultation to evaluate your needs and provide honest, customized pricing tailored just for you.",
     },
     {
-      question: "How do I book a consultation at GroHair?",
+      question: "How do I book an appointment?",
       answer:
-        "You can book a consultation through our website, by calling us, or by visiting our clinic directly.",
+        'Booking an appointment is quick and hassle-free. Simply click the "Book an Appointment" button on our website, call our clinic, or leave your details \u2014 and our team will promptly get in touch to confirm your preferred time.',
     },
-  ];
-
-  const skinFaqs = [
     {
       question: "What skincare treatments do you offer?",
       answer:
-        "We provide treatments for acne, pigmentation, anti-aging, skin rejuvenation, laser hair removal, chemical peels, hydrafacials, and microneedling.",
+        "We offer a comprehensive range of advanced skincare treatments for acne, pigmentation, anti-aging, and overall skin rejuvenation. Our services include Laser Hair Reduction, chemical peels, hydrafacials, microneedling, advanced laser resurfacing, skin tightening treatments, anti-aging injectables, and customized dermatology-led treatment programs tailored to individual skin concerns.",
     },
     {
       question: "How do I know which facial treatment is right for me?",
       answer:
-        "Our dermatologists will assess your skin type and concerns during a consultation to recommend the best treatment plan.",
+        "Every individual\u2019s skin is unique. During your consultation, our specialists conduct a thorough evaluation of your skin health and concerns to determine the most suitable, medically guided treatment approach for optimal and lasting results.",
     },
     {
-      question: "Is laser hair removal safe?",
+      question: "Is Laser Hair Reduction safe?",
       answer:
-        "Yes, laser hair removal is safe when performed by trained professionals using FDA-approved equipment.",
+        "Yes, Laser Hair Reduction is a clinically proven and safe procedure when carried out by qualified professionals using advanced medical-grade technology. Safety and patient comfort are always our priority.",
     },
     {
       question: "How many sessions are required for laser hair removal?",
@@ -242,14 +352,40 @@ const GrohairLanding = () => {
 
   const testimonials = [
     {
-      name: "Shalini",
+      name: "Arun Kumar",
       rating: 5,
-      text: "I had an amazing experience at GroHair clinic. The staff was professional, the treatment was effective, and I saw visible results within weeks. Highly recommend!",
+      text: "I was initially hesitant about getting a hair transplant, but the team explained everything clearly and made me feel confident. The results look very natural, and I\u2019m extremely satisfied with my decision.",
+      image: hairTransImg,
     },
     {
-      name: "Rahul",
+      name: "Meena R",
       rating: 5,
-      text: "Excellent service and results. The team is very knowledgeable and made me feel comfortable throughout the treatment.",
+      text: "I took treatment for pigmentation, and I can see visible improvement within a few sessions. The doctors are professional and genuinely care about patient comfort.",
+      image: skinPeelsImg,
+    },
+    {
+      name: "Sathish V",
+      rating: 5,
+      text: "The FUE procedure was smooth and well managed. The clinic maintains high standards of hygiene, and the staff were supportive throughout the process.",
+      image: fueImg,
+    },
+    {
+      name: "Priya S",
+      rating: 5,
+      text: "I underwent Laser Hair Reduction and had a great experience. The procedure was comfortable, and the team guided me properly before and after treatment.",
+      image: ndyagLaserImg,
+    },
+    {
+      name: "Karthik N",
+      rating: 5,
+      text: "Very transparent consultation and clear explanation of costs. No false promises \u2014 just honest guidance and good results.",
+      image: mesoImg,
+    },
+    {
+      name: "Divya M",
+      rating: 5,
+      text: "Professional doctors, advanced equipment, and a welcoming atmosphere. I would highly recommend GroHair GloSkin for anyone considering treatment.",
+      image: hydrafacialImg,
     },
   ];
 
@@ -371,17 +507,6 @@ const GrohairLanding = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
-  const handleSkinPrev = () => {
-    setCurrentSkinIndex((prev) =>
-      prev === 0 ? skinTreatments.length - 5 : prev - 1,
-    );
-  };
-
-  const handleSkinNext = () => {
-    setCurrentSkinIndex((prev) =>
-      prev >= skinTreatments.length - 5 ? 0 : prev + 1,
-    );
   };
 
   return (
@@ -515,18 +640,14 @@ const GrohairLanding = () => {
                 >
                   <option value="">Select Treatment</option>
                   <optgroup label="Hair Treatments">
-                    <option>Stem X Pro</option>
-                    <option>Mesotherapy</option>
-                    <option>Oxygeneo Therapy</option>
-                    <option>Scalp Micropigmentation</option>
-                    <option>Hair Transplant</option>
+                    {hairTreatments.map((t, i) => (
+                      <option key={i}>{t.title}</option>
+                    ))}
                   </optgroup>
                   <optgroup label="Skin Treatments">
-                    <option>Wart Removal</option>
-                    <option>Laser Hair Removal</option>
-                    <option>HydraFacial</option>
-                    <option>Q-Switch</option>
-                    <option>Skin Brightening Treatment</option>
+                    {skinTreatments.map((t, i) => (
+                      <option key={i}>{t.title}</option>
+                    ))}
                   </optgroup>
                 </select>
               </div>
@@ -568,35 +689,51 @@ const GrohairLanding = () => {
           <h2 className={styles.sectionTitle}>
             Our <span className={styles.highlight}>Hair</span> Treatments
           </h2>
-          <div className={styles.sectionNav}>
-            <button className={styles.sectionNavBtn}>‹</button>
-            <button className={styles.sectionNavBtn}>›</button>
-          </div>
         </div>
-        <div className={styles.treatmentsGrid}>
-          {hairTreatments.map((treatment, index) => (
-            <div
-              key={index}
-              className={styles.treatmentCard}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={styles.treatmentImageWrapper}>
-                <img
-                  src={treatment.image}
-                  alt={treatment.title}
-                  className={styles.treatmentImage}
-                />
-                <span className={styles.treatmentImageTitle}>
+
+        <div className={styles.treatmentPanel}>
+          <div className={styles.treatmentList}>
+            <div className={styles.treatmentListInner}>
+              {hairTreatments.map((treatment, index) => (
+                <button
+                  key={index}
+                  className={`${styles.treatmentListItem} ${selectedHairTreatment === index ? styles.treatmentListItemActive : ""}`}
+                  onClick={() => setSelectedHairTreatment(index)}
+                >
                   {treatment.title}
-                </span>
-              </div>
-              <div className={styles.treatmentTextContent}>
-                <p className={styles.treatmentDescription}>
-                  {treatment.description}
-                </p>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.treatmentDetail} key={selectedHairTreatment}>
+            <div className={styles.treatmentDetailImage}>
+              <img
+                src={hairTreatments[selectedHairTreatment].image}
+                alt={hairTreatments[selectedHairTreatment].title}
+              />
+            </div>
+            <div className={styles.treatmentDetailContent}>
+              <h3 className={styles.treatmentDetailTitle}>
+                {hairTreatments[selectedHairTreatment].title}
+              </h3>
+              <p className={styles.treatmentDetailDescription}>
+                {hairTreatments[selectedHairTreatment].description}
+              </p>
+              <div className={styles.treatmentBenefits}>
+                <h4 className={styles.benefitsHeading}>Benefits</h4>
+                <div className={styles.benefitsGrid}>
+                  {hairTreatments[selectedHairTreatment].benefits.map(
+                    (benefit, i) => (
+                      <span key={i} className={styles.benefitTag}>
+                        {benefit}
+                      </span>
+                    )
+                  )}
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -610,47 +747,52 @@ const GrohairLanding = () => {
           <h2 className={styles.sectionTitle}>
             Our <span className={styles.highlight}>Skin</span> Treatments
           </h2>
-          <div className={styles.sectionNav}>
-            <button className={styles.sectionNavBtn} onClick={handleSkinPrev}>
-              ‹
-            </button>
-            <button className={styles.sectionNavBtn} onClick={handleSkinNext}>
-              ›
-            </button>
-          </div>
         </div>
-        <div className={styles.skinTreatmentsGrid}>
-          {skinTreatments
-            .slice(currentSkinIndex, currentSkinIndex + 5)
-            .map((treatment, index) => (
-              <div
-                key={index}
-                className={styles.skinTreatmentCard}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className={styles.skinTreatmentImageWrapper}>
-                  <img
-                    src={treatment.image}
-                    alt={treatment.title}
-                    className={styles.skinTreatmentImage}
-                  />
-                  <span className={styles.skinTreatmentImageTitle}>
-                    {treatment.title}
-                  </span>
-                </div>
-                <div className={styles.skinTreatmentInfo}>
-                  <p className={styles.skinTreatmentDescription}>
-                    {treatment.description}
-                  </p>
+
+        <div className={`${styles.treatmentPanel} ${styles.treatmentPanelReversed}`}>
+          <div className={styles.treatmentList}>
+            <div className={styles.treatmentListInner}>
+              {skinTreatments.map((treatment, index) => (
+                <button
+                  key={index}
+                  className={`${styles.treatmentListItem} ${selectedSkinTreatment === index ? styles.treatmentListItemActive : ""}`}
+                  onClick={() => setSelectedSkinTreatment(index)}
+                >
+                  {treatment.title}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.treatmentDetail} key={selectedSkinTreatment}>
+            <div className={styles.treatmentDetailImage}>
+              <img
+                src={skinTreatments[selectedSkinTreatment].image}
+                alt={skinTreatments[selectedSkinTreatment].title}
+              />
+            </div>
+            <div className={styles.treatmentDetailContent}>
+              <h3 className={styles.treatmentDetailTitle}>
+                {skinTreatments[selectedSkinTreatment].title}
+              </h3>
+              <p className={styles.treatmentDetailDescription}>
+                {skinTreatments[selectedSkinTreatment].description}
+              </p>
+              <div className={styles.treatmentBenefits}>
+                <h4 className={styles.benefitsHeading}>Benefits</h4>
+                <div className={styles.benefitsGrid}>
+                  {skinTreatments[selectedSkinTreatment].benefits.map(
+                    (benefit, i) => (
+                      <span key={i} className={styles.benefitTag}>
+                        {benefit}
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
-            ))}
+            </div>
+          </div>
         </div>
-        <button className={styles.viewAllBtn}>
-          <a className={styles.underline} href="/">
-            Book Appointment
-          </a>
-        </button>
       </section>
 
       {/* FAQs Section */}
@@ -660,66 +802,32 @@ const GrohairLanding = () => {
         className={`${styles.faqsSection} ${isVisible["faqs"] ? styles.visible : ""}`}
       >
         <div className={styles.faqsContainer}>
-          {/* Hair FAQs */}
-          <div className={styles.faqColumn}>
-            <h3 className={styles.faqTitle}>
-              FAQs for <span className={styles.faqHighlightRed}>GroHair</span>
-            </h3>
-            <div className={styles.faqList}>
-              {hairFaqs.map((faq, index) => (
+          <h2 className={styles.sectionTitle}>
+            Frequently Asked <span className={styles.highlight}>Questions</span>
+          </h2>
+          <div className={styles.faqList}>
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className={styles.faqItem}
+                onClick={() =>
+                  setActiveHairFaq(activeHairFaq === index ? null : index)
+                }
+              >
                 <div
-                  key={index}
-                  className={styles.faqItem}
-                  onClick={() =>
-                    setActiveHairFaq(activeHairFaq === index ? null : index)
-                  }
+                  className={`${styles.faqQuestion} ${activeHairFaq === index ? styles.faqQuestionActive : ""}`}
                 >
-                  <div
-                    className={`${styles.faqQuestion} ${activeHairFaq === index ? styles.faqQuestionActive : ""}`}
-                  >
-                    <span>{faq.question}</span>
-                    <ChevronDown
-                      className={`${styles.faqIcon} ${activeHairFaq === index ? styles.faqIconActive : ""}`}
-                      size={20}
-                    />
-                  </div>
-                  {activeHairFaq === index && (
-                    <div className={styles.faqAnswer}>{faq.answer}</div>
-                  )}
+                  <span>{faq.question}</span>
+                  <ChevronDown
+                    className={`${styles.faqIcon} ${activeHairFaq === index ? styles.faqIconActive : ""}`}
+                    size={20}
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Skin FAQs */}
-          <div className={styles.faqColumn}>
-            <h3 className={styles.faqTitle}>
-              FAQs for <span className={styles.faqHighlightBlue}>GloSkin</span>
-            </h3>
-            <div className={styles.faqList}>
-              {skinFaqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className={styles.faqItem}
-                  onClick={() =>
-                    setActiveSkinFaq(activeSkinFaq === index ? null : index)
-                  }
-                >
-                  <div
-                    className={`${styles.faqQuestion} ${activeSkinFaq === index ? styles.faqQuestionActive : ""}`}
-                  >
-                    <span>{faq.question}</span>
-                    <ChevronDown
-                      className={`${styles.faqIcon} ${activeSkinFaq === index ? styles.faqIconActive : ""}`}
-                      size={20}
-                    />
-                  </div>
-                  {activeSkinFaq === index && (
-                    <div className={styles.faqAnswer}>{faq.answer}</div>
-                  )}
-                </div>
-              ))}
-            </div>
+                {activeHairFaq === index && (
+                  <div className={styles.faqAnswer}>{faq.answer}</div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -732,7 +840,7 @@ const GrohairLanding = () => {
       >
         <div className={styles.testimonialsContainer}>
           <div className={styles.testimonialImage}>
-            <img src={testimonial} alt="Happy Customer" />
+            <img src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} />
           </div>
           <div className={styles.testimonialContent}>
             <span className={styles.testimonialLabel}>Testimonials</span>
@@ -799,7 +907,7 @@ const GrohairLanding = () => {
       {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          {/* Column 1: Logo & Address */}
+          {/* Column 1: Logo & CTA */}
           <div className={styles.footerLeft}>
             <div className={styles.footerLogo}>
               <img
@@ -808,16 +916,20 @@ const GrohairLanding = () => {
                 className={styles.footerLogoImage}
               />
             </div>
-            <div className={styles.footerAddress}>
-              <MapPin size={18} className={styles.footerAddressIcon} />
-              <p>
-                No.84, Green Field Hub, Seegehalli Rd, Kadugodi, Bengaluru,
-                Karnataka 560067
-              </p>
+            <h3 className={styles.footerCtaTitle}>
+              Ready to Begin Your Hair & Skin Transformation?
+            </h3>
+            <div className={styles.footerCtaButtons}>
+              <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={styles.footerCtaBtn}>
+                Book an Appointment
+              </a>
+              <a href="tel:+919159856789" className={styles.footerCtaBtnOutline}>
+                <PhoneCall size={16} /> Call Now
+              </a>
             </div>
           </div>
 
-          {/* Column 2: Map & Contact */}
+          {/* Column 2: Map, Contact & Address */}
           <div className={styles.footerRight}>
             {/* Map */}
             <div className={styles.footerMapSection}>
@@ -826,7 +938,7 @@ const GrohairLanding = () => {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801142.5699581492!2d75.32222155625001!3d13.012855300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0fddff324535%3A0x15b879a4bc692d89!2sAdvanced%20GroHair%20%26%20GloSkin%20-%20Seegehalli!5e1!3m2!1sen!2sin!4v1770724744326!5m2!1sen!2sin"
                   width="100%"
                   height="250"
-                
+
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -845,6 +957,13 @@ const GrohairLanding = () => {
                   <a href="mailto:seegehalli@adgrohair.com">
                     seegehalli@adgrohair.com
                   </a>
+                </p>
+                <p>
+                  <MapPin size={16} />
+                  <span>
+                    No.84, Green Field Hub, Seegehalli Rd, Kadugodi, Bengaluru,
+                    Karnataka 560067
+                  </span>
                 </p>
               </div>
             </div>
