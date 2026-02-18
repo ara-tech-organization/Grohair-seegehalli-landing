@@ -361,12 +361,10 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  scrollbar-width: thin;
-  scrollbar-color: #d32f2f transparent;
 }
 
 .treatmentListInner::-webkit-scrollbar {
-  width: 4px;
+  width: 3px;
 }
 
 .treatmentListInner::-webkit-scrollbar-track {
@@ -375,7 +373,7 @@
 
 .treatmentListInner::-webkit-scrollbar-thumb {
   background: #d32f2f;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 .treatmentListInner::-webkit-scrollbar-thumb:hover {
