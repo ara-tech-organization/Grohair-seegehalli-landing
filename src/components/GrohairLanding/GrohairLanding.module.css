@@ -885,12 +885,22 @@
 
   .treatmentList {
     flex: none;
+    overflow: visible;
+    position: static;
+    border-radius: 10px;
+  }
+
+  .treatmentListInner {
+    position: static;
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
-    max-height: none;
-    border-radius: 10px;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .treatmentListInner::-webkit-scrollbar {
+    height: 2px;
+    width: 0;
   }
 
   .treatmentPanelReversed .treatmentList {

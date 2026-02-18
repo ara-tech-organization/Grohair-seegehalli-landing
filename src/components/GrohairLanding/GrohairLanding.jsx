@@ -546,7 +546,7 @@ const GrohairLanding = () => {
             <span className={styles.phoneIcon}>
               <PhoneCall size={17}></PhoneCall>
             </span>
-            9159856789
+            +91 9159856789
           </a>
         </div>
       </header>
@@ -607,8 +607,7 @@ const GrohairLanding = () => {
                   required
                 >
                   <option value="">Select Time</option>
-                  <option value="9:00 AM">9:00 AM</option>
-                  <option value="9:30 AM">9:30 AM</option>
+
                   <option value="10:00 AM">10:00 AM</option>
                   <option value="10:30 AM">10:30 AM</option>
                   <option value="11:00 AM">11:00 AM</option>
@@ -720,7 +719,7 @@ const GrohairLanding = () => {
                       <span key={i} className={styles.benefitTag}>
                         {benefit}
                       </span>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -741,7 +740,9 @@ const GrohairLanding = () => {
           </h2>
         </div>
 
-        <div className={`${styles.treatmentPanel} ${styles.treatmentPanelReversed}`}>
+        <div
+          className={`${styles.treatmentPanel} ${styles.treatmentPanelReversed}`}
+        >
           <div className={styles.treatmentList}>
             <div className={styles.treatmentListInner}>
               {skinTreatments.map((treatment, index) => (
@@ -778,7 +779,7 @@ const GrohairLanding = () => {
                       <span key={i} className={styles.benefitTag}>
                         {benefit}
                       </span>
-                    )
+                    ),
                   )}
                 </div>
               </div>
@@ -832,7 +833,10 @@ const GrohairLanding = () => {
       >
         <div className={styles.testimonialsContainer}>
           <div className={styles.testimonialImage}>
-            <img src={testimonials[currentTestimonial].image} alt={testimonials[currentTestimonial].name} />
+            <img
+              src={testimonials[currentTestimonial].image}
+              alt={testimonials[currentTestimonial].name}
+            />
           </div>
           <div className={styles.testimonialContent}>
             <span className={styles.testimonialLabel}>Testimonials</span>
@@ -912,10 +916,20 @@ const GrohairLanding = () => {
               Ready to Begin Your Hair & Skin Transformation?
             </h3>
             <div className={styles.footerCtaButtons}>
-              <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={styles.footerCtaBtn}>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className={styles.footerCtaBtn}
+              >
                 Book an Appointment
               </a>
-              <a href="tel:+919159856789" className={styles.footerCtaBtnOutline}>
+              <a
+                href="tel:+919159856789"
+                className={styles.footerCtaBtnOutline}
+              >
                 <PhoneCall size={16} /> Call Now
               </a>
             </div>
@@ -923,12 +937,13 @@ const GrohairLanding = () => {
             {/* Contact Details */}
             <div className={styles.footerContact}>
               <p>
-                <Phone size={16} /> <a href="tel: 9159856789"> 9159856789</a>
+                <Phone size={16} />{" "}
+                <a href="tel: 9159856789"> +91 9159856789</a>
               </p>
               <p>
                 <Mail size={16} />
-                <a href="mailto:seegehalli@adgrohair.com">
-                  seegehalli@adgrohair.com
+                <a href="mailto:adgroseegehalli@gmail.com">
+                  adgroseegehalli@gmail.com
                 </a>
               </p>
               <p>
@@ -968,7 +983,7 @@ const GrohairLanding = () => {
               href="https://discovertechnologies.co/index.html"
               className={styles.footerBottomLink}
             >
-              Ara Discoveries Pvt.Ltd
+              ARA Discoveries Pvt.Ltd
             </a>
           </p>
         </div>
