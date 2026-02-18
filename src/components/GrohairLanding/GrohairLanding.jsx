@@ -927,45 +927,39 @@ const GrohairLanding = () => {
                 <PhoneCall size={16} /> Call Now
               </a>
             </div>
-          </div>
-
-          {/* Column 2: Map, Contact & Address */}
-          <div className={styles.footerRight}>
-            {/* Map */}
-            <div className={styles.footerMapSection}>
-              <div className={styles.footerMap}>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801142.5699581492!2d75.32222155625001!3d13.012855300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0fddff324535%3A0x15b879a4bc692d89!2sAdvanced%20GroHair%20%26%20GloSkin%20-%20Seegehalli!5e1!3m2!1sen!2sin!4v1770724744326!5m2!1sen!2sin"
-                  width="100%"
-                  height="250"
-
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
 
             {/* Contact Details */}
-            <div className={styles.footerContactSection}>
-              <div className={styles.footerContact}>
-                <p>
-                  <Phone size={16} /> <a href="tel: 9159856789"> 9159856789</a>
-                </p>
-                <p>
-                  <Mail size={16} />
-                  <a href="mailto:seegehalli@adgrohair.com">
-                    seegehalli@adgrohair.com
-                  </a>
-                </p>
-                <p>
-                  <MapPin size={16} />
-                  <span>
-                    No.84, Green Field Hub, Seegehalli Rd, Kadugodi, Bengaluru,
-                    Karnataka 560067
-                  </span>
-                </p>
-              </div>
+            <div className={styles.footerContact}>
+              <p>
+                <Phone size={16} /> <a href="tel: 9159856789"> 9159856789</a>
+              </p>
+              <p>
+                <Mail size={16} />
+                <a href="mailto:seegehalli@adgrohair.com">
+                  seegehalli@adgrohair.com
+                </a>
+              </p>
+              <p>
+                <MapPin size={16} />
+                <span>
+                  No.84, Green Field Hub, Seegehalli Rd, Kadugodi, Bengaluru,
+                  Karnataka 560067
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {/* Column 2: Map */}
+          <div className={styles.footerRight}>
+            <div className={styles.footerMap}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801142.5699581492!2d75.32222155625001!3d13.012855300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0fddff324535%3A0x15b879a4bc692d89!2sAdvanced%20GroHair%20%26%20GloSkin%20-%20Seegehalli!5e1!3m2!1sen!2sin!4v1770724744326!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

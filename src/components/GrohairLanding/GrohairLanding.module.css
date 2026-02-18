@@ -1052,7 +1052,7 @@ html {
   display: flex;
   justify-content: space-between;
   gap: 80px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Left Column: Logo & CTA */
@@ -1131,21 +1131,11 @@ html {
   flex-shrink: 0;
 }
 
-/* Right Column: Map & Contact */
+/* Right Column: Map */
 .footerRight {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start;
   flex: 1;
-}
-
-/* Map */
-.footerMapSection {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  min-height: 300px;
 }
 
 .footerMap {
@@ -1153,19 +1143,15 @@ html {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   width: 100%;
+  height: 100%;
 }
 
 .footerMap iframe {
   border: none;
   display: block;
-}
-
-/* Contact Details */
-.footerContactSection {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
 }
 
 .footerSocial {
@@ -1276,11 +1262,7 @@ html {
   }
 
   .footerRight {
-    align-items: center;
-  }
-
-  .footerContactSection {
-    align-items: center;
+    min-height: 250px;
   }
 
   .footerContact {
