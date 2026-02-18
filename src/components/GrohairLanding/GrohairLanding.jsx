@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ChevronDown, Phone, Mail, MapPin, PhoneCall } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import styles from "./GrohairLanding.module.css";
 
 // Hair treatment images
@@ -29,6 +30,7 @@ import logo from "../../assets/logo.png";
 import footerLogo from "../../assets/footer.png";
 
 const GrohairLanding = () => {
+  const navigate = useNavigate();
   const [activeHairFaq, setActiveHairFaq] = useState(0);
   const [activeSkinFaq, setActiveSkinFaq] = useState(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -45,7 +47,6 @@ const GrohairLanding = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState({ type: "", text: "" });
-  const [showThankYouModal, setShowThankYouModal] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -329,8 +330,6 @@ const GrohairLanding = () => {
       console.log("✅ API Response:", data);
 
       if (!data.error) {
-        // Show thank you modal on success
-        setShowThankYouModal(true);
         // Track form submission conversion with Google Ads
         if (window.gtag) {
           window.gtag('event', 'conversion', {
@@ -350,6 +349,8 @@ const GrohairLanding = () => {
         });
         console.log("📬 Email sent from: aradiscovermarketing@gmail.com");
         console.log("📬 Email sent to: tenkasi@adgrohair.com");
+        // Navigate to thank you page
+        navigate("/thank-you");
       } else {
         setSubmitMessage({
           type: "error",
@@ -383,25 +384,27 @@ const GrohairLanding = () => {
     );
   };
 
-  const handleCloseModal = () => {
-    setShowThankYouModal(false);
-    setSubmitMessage({ type: "", text: "" });
-  };
-
   return (
     <div className={styles.container}>
-      {/* Thank You Modal */}
-      {showThankYouModal && (
-        <div className={styles.modalOverlay} onClick={handleCloseModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <h2 className={styles.modalTitle}>Thank You!</h2>
-            <p className={styles.modalText}>Your submission has been received.</p>
-            <button className={styles.modalButton} onClick={handleCloseModal}>
-              Back to Home
-            </button>
-          </div>
-        </div>
-      )}
+      {/* Fixed Contact Icons */}
+      <div className={styles.fixedIcons}>
+        <a
+          href="tel:+919159856789"
+          className={styles.fixedIconCall}
+          aria-label="Call us"
+        >
+          <Phone size={24} />
+        </a>
+        <a
+          href="https://wa.me/919159856789"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.fixedIconWhatsapp}
+          aria-label="WhatsApp"
+        >
+          <FaWhatsapp size={24} />
+        </a>
+      </div>
 
       {/* Header */}
       <header className={styles.header}>
@@ -414,11 +417,11 @@ const GrohairLanding = () => {
             />
           </div>
 
-          <a href="tel:+918110956789" className={styles.phone}>
+          <a href="tel:+919159856789" className={styles.phone}>
             <span className={styles.phoneIcon}>
               <PhoneCall size={17}></PhoneCall>
             </span>
-            81109 56789
+            9159856789
           </a>
         </div>
       </header>
@@ -465,18 +468,44 @@ const GrohairLanding = () => {
                   className={styles.formInput}
                   value={formData.date}
                   onChange={handleInputChange}
+                  min={new Date().toISOString().split("T")[0]}
+                  max="2099-12-31"
                   required
                 />
               </div>
               <div className={styles.formRow}>
-                <input
-                  type="time"
+                <select
                   name="time"
                   className={styles.formInput}
                   value={formData.time}
                   onChange={handleInputChange}
                   required
-                />
+                >
+                  <option value="">Select Time</option>
+                  <option value="9:00 AM">9:00 AM</option>
+                  <option value="9:30 AM">9:30 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="10:30 AM">10:30 AM</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="11:30 AM">11:30 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="12:30 PM">12:30 PM</option>
+                  <option value="1:00 PM">1:00 PM</option>
+                  <option value="1:30 PM">1:30 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="2:30 PM">2:30 PM</option>
+                  <option value="3:00 PM">3:00 PM</option>
+                  <option value="3:30 PM">3:30 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="4:30 PM">4:30 PM</option>
+                  <option value="5:00 PM">5:00 PM</option>
+                  <option value="5:30 PM">5:30 PM</option>
+                  <option value="6:00 PM">6:00 PM</option>
+                  <option value="6:30 PM">6:30 PM</option>
+                  <option value="7:00 PM">7:00 PM</option>
+                  <option value="7:30 PM">7:30 PM</option>
+                  <option value="8:00 PM">8:00 PM</option>
+                </select>
                 <select
                   name="treatment"
                   className={styles.formInput}
@@ -782,8 +811,8 @@ const GrohairLanding = () => {
             <div className={styles.footerAddress}>
               <MapPin size={18} className={styles.footerAddressIcon} />
               <p>
-                1B Si, No.5/1A, Madurai - Tenkasi Main Rd, <br></br>near by
-                Ishana Honda, Sakthi Nagar, Tenkasi, Tamil Nadu 627811
+                No.84, Green Field Hub, Seegehalli Rd, Kadugodi, Bengaluru,
+                Karnataka 560067
               </p>
             </div>
           </div>
@@ -794,13 +823,13 @@ const GrohairLanding = () => {
             <div className={styles.footerMapSection}>
               <div className={styles.footerMap}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15024.85059974862!2d77.300392!3d8.977262!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0683fe15ce0f75%3A0x2f1d9cbaf71728fb!2sAdvanced%20GroHair%20%26%20GloSkin%20-%20Tenkasi!5e1!3m2!1sen!2sin!4v1769162400727!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801142.5699581492!2d75.32222155625001!3d13.012855300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0fddff324535%3A0x15b879a4bc692d89!2sAdvanced%20GroHair%20%26%20GloSkin%20-%20Seegehalli!5e1!3m2!1sen!2sin!4v1770724744326!5m2!1sen!2sin"
                   width="100%"
                   height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
+                
+                  allowfullscreen=""
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
             </div>
@@ -809,7 +838,7 @@ const GrohairLanding = () => {
             <div className={styles.footerContactSection}>
               <div className={styles.footerContact}>
                 <p>
-                  <Phone size={16} /> <a href="tel: 8110956789"> 81109 56789</a>
+                  <Phone size={16} /> <a href="tel: 9159856789"> 9159856789</a>
                 </p>
                 <p>
                   <Mail size={16} />
