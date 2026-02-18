@@ -842,8 +842,8 @@ const GrohairLanding = () => {
                 </p>
                 <p>
                   <Mail size={16} />
-                  <a href="mailto:adgrogloseegehalli@adgrohair.com">
-                    adgrogloseegehalli@adgrohair.com
+                  <a href="mailto:seegehalli@adgrohair.com">
+                    seegehalli@adgrohair.com
                   </a>
                 </p>
               </div>
