@@ -89,7 +89,7 @@ const GrohairLanding = () => {
 
   const hairTreatments = [
     {
-      title: "MesoTherapy",
+      title: "Mesotherapy",
       description: "Hair Mesotherapy is a minimally invasive treatment where a customized blend of vitamins, amino acids, peptides, and hyaluronic acid is delivered into the scalp through microinjections to nourish hair follicles and promote thicker, healthier hair growth. Recommended every 15 days for 10\u201312 sessions for optimal results.",
       image: mesoImg,
       benefits: ["Reduces hair fall", "Improves hair thickness", "Supports follicle health", "No downtime"],
@@ -639,16 +639,8 @@ const GrohairLanding = () => {
                   required
                 >
                   <option value="">Select Treatment</option>
-                  <optgroup label="Hair Treatments">
-                    {hairTreatments.map((t, i) => (
-                      <option key={i}>{t.title}</option>
-                    ))}
-                  </optgroup>
-                  <optgroup label="Skin Treatments">
-                    {skinTreatments.map((t, i) => (
-                      <option key={i}>{t.title}</option>
-                    ))}
-                  </optgroup>
+                  <option value="Hair">Hair</option>
+                  <option value="Skin">Skin</option>
                 </select>
               </div>
               {submitMessage.text && (
