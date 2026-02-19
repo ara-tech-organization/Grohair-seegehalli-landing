@@ -4,38 +4,35 @@ import { ChevronDown, Phone, Mail, MapPin, PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import styles from "./GrohairLanding.module.css";
 
-// Hair treatment images (webp)
-import mesoImg from "../../assets/meso.webp";
-import oxyImg from "../../assets/oxy.webp";
-import prpImg from "../../assets/prp.webp";
-import hairTransImg from "../../assets/HairTrans.webp";
+// Hair treatment images
+import mesoImg from "../../assets/treatments/mesotherapy.png";
+import oxyImg from "../../assets/treatments/olt.png";
+import prpImg from "../../assets/treatments/prp.png";
+import hairTransImg from "../../assets/treatments/basic-hair-transplant-fue.png";
 import fueImg from "../../assets/fue.webp";
-import eyebrowImg from "../../assets/eyebrow.webp";
-import beardImg from "../../assets/beard.webp";
-import mustacheImg from "../../assets/mustache.webp";
-import scalpImg from "../../assets/scalp.webp";
-import partialAlopeciaImg from "../../assets/parti-alopica-1.webp";
-import totalAlopeciaImg from "../../assets/full-alopica.webp";
-import microbladingImg from "../../assets/microblading.webp";
-import eyelashImg from "../../assets/eyelash.webp";
-import basicThinPolyImg from "../../assets/basic-thin-poly.webp";
-import celebrityChoiceImg from "../../assets/celebrity-choice.webp";
-import fullLaceImg from "../../assets/full-lace.webp";
-import hairExImg from "../../assets/hairEx.webp";
-import menFullCapImg from "../../assets/men-full-cap.webp";
-import womenFullCapImg from "../../assets/women-full-cap.webp";
+import eyebrowImg from "../../assets/treatments/eyebrow-transplant.png";
+import beardImg from "../../assets/treatments/beard-transplant.png";
+import mustacheImg from "../../assets/treatments/moustache-transplant.png";
+import scalpImg from "../../assets/treatments/smp.png";
+import microbladingImg from "../../assets/treatments/microblading.png";
+import eyelashImg from "../../assets/treatments/eyelash-extensions.png";
+import basicThinPolyImg from "../../assets/treatments/basic-thin-poly.png";
+import celebrityChoiceImg from "../../assets/treatments/celebrity-choice.png";
+import fullLaceImg from "../../assets/treatments/full-lace.png";
+import hairExImg from "../../assets/treatments/hair-extension.png";
+import menFullCapImg from "../../assets/treatments/men-full-cap.png";
+import womenFullCapImg from "../../assets/treatments/women-full-cap.png";
 
 // Skin treatment images
-import skinPeelsImg from "../../assets/skinpeels.jpg";
-import microdermabrasionImg from "../../assets/microdermabrasion.jpg";
-import qSwitchedLaserImg from "../../assets/qswitchedlaser.jpg";
-import ndyagLaserImg from "../../assets/ndyaglaser.jpg";
-import diodeLaserImg from "../../assets/laser.jpg";
-import rfFacialsImg from "../../assets/radiofrequency.jpg";
-import botoxImg from "../../assets/botox.jpg";
-import dermaFillersImg from "../../assets/dermafillers.jpg";
-import facePrpImg from "../../assets/faceprp.jpg";
-import hydrafacialImg from "../../assets/hydrafacial (2).jpg";
+import skinPeelsImg from "../../assets/treatments/skin-peels.png";
+import microdermabrasionImg from "../../assets/treatments/microdermabrasion.png";
+import qSwitchedLaserImg from "../../assets/treatments/q-switched-lasers.png";
+import ndyagLaserImg from "../../assets/treatments/nd-yag-laser.png";
+import diodeLaserImg from "../../assets/treatments/diode-laser.png";
+import rfFacialsImg from "../../assets/treatments/rf-facials.png";
+import dermaFillersImg from "../../assets/treatments/dermal-fillers.png";
+import facePrpImg from "../../assets/treatments/face-prp.png";
+import hydrafacialImg from "../../assets/treatments/hydrafacial.png";
 
 // Before/After images
 import ba1 from "../../assets/BeforeAfter/b-a-01.webp";
@@ -90,180 +87,162 @@ const GrohairLanding = () => {
   const hairTreatments = [
     {
       title: "Mesotherapy",
-      description: "Hair Mesotherapy is a minimally invasive treatment where a customized blend of vitamins, amino acids, peptides, and hyaluronic acid is delivered into the scalp through microinjections to nourish hair follicles and promote thicker, healthier hair growth. Recommended every 15 days for 10\u201312 sessions for optimal results.",
+      description: "Hair Mesotherapy is a non-surgical, minimally invasive procedure designed to strengthen and revitalize hair follicles. A carefully customized cocktail of vitamins, amino acids, peptides, and hyaluronic acid is injected directly into the scalp using fine microinjections. This targeted nourishment helps improve blood circulation, reduce hair thinning, and encourage thicker, healthier hair growth. For best results, sessions are typically recommended once every 15 days, with a total of 10\u201312 sessions.",
       image: mesoImg,
-      benefits: ["Reduces hair fall", "Improves hair thickness", "Supports follicle health", "No downtime"],
+      benefits: ["Reduces Hair Fall", "Improves Hair Thickness", "Supports Follicle Health", "No Downtime"],
     },
     {
       title: "Oxygen Laser Therapy (OLT)",
-      description: "Oxygen Laser Therapy is a non-invasive treatment that uses advanced light technology to stimulate scalp circulation, improve oxygen delivery, and support healthy hair follicle function. It is safe, painless, and suitable for both men and women. OLT is also beneficial after hair transplantation to support healing and promote early growth.",
+      description: "Oxygen Laser Therapy (OLT) is a gentle, non-invasive treatment that utilizes advanced light technology to enhance scalp circulation and boost oxygen supply to the hair follicles. By improving blood flow and cellular activity, it helps strengthen follicles and support healthier, stronger hair growth. The procedure is completely safe, painless, and suitable for both men and women. OLT is also highly recommended after hair transplantation, as it aids in faster healing, reduces inflammation, and promotes early and improved hair growth.",
       image: oxyImg,
-      benefits: ["Reduces hair fall", "Strengthens thin hair", "Improves scalp oxygenation", "Balances scalp health", "Stimulates dormant follicles"],
+      benefits: ["Reduces Hair Fall", "Strengthens Thin Hair", "Improves Scalp Oxygenation", "Balances Scalp Health", "Stimulates Dormant Follicles"],
     },
     {
       title: "PRP Pro+",
-      description: "PRP Pro+ is an advanced hair restoration treatment that uses the healing power of your own platelets to stimulate hair follicles and promote natural regrowth. The concentrated plasma, rich in growth factors, is carefully injected into the scalp to strengthen miniaturizing and newly implanted follicles. For optimal results, 8\u201310 sessions are typically recommended at 20-day intervals.",
+      description: "PRP Pro+ is a next-generation hair rejuvenation therapy that harnesses the regenerative power of your own blood platelets to activate dormant hair follicles and encourage natural hair regrowth. The platelet-rich plasma, packed with essential growth factors, is precisely injected into targeted areas of the scalp to strengthen thinning, miniaturizing, and newly transplanted follicles. For the best results, 8\u201310 sessions are usually advised at intervals of 20 days.",
       image: prpImg,
-      benefits: ["Controls hair fall", "Stimulates natural regrowth", "Strengthens hair strands", "Non-surgical procedure", "Uses your body\u2019s own natural growth factors"],
+      benefits: ["Controls Hair Fall", "Stimulates Natural Regrowth", "Strengthens Hair Strands", "Non-Surgical Procedure", "Uses Your Body\u2019s Own Natural Growth Factors"],
     },
     {
       title: "Basic Hair Transplant FUE",
-      description: "FUE (Follicular Unit Extraction) is a minimally invasive hair restoration procedure where healthy hair follicles are carefully extracted from the donor area and precisely implanted into thinning or balding areas. Performed under local anesthesia, the procedure is typically completed within a day and requires minimal downtime.",
+      description: "FUE (Follicular Unit Extraction) is an advanced, minimally invasive hair transplant technique that restores natural hair growth with precision and care. Healthy individual hair follicles are gently extracted from the donor area\u2014usually the back or sides of the scalp\u2014and meticulously implanted into thinning or bald regions. Performed under local anesthesia, FUE is typically completed within a single day, ensuring maximum comfort and minimal discomfort. The technique leaves no linear scars, offers a quicker recovery time, and requires minimal downtime.",
       image: hairTransImg,
-      benefits: ["Natural, permanent hair growth", "Minimally invasive procedure", "No major cuts or stitches", "Minimal downtime", "Uses your own hair follicles", "One-day procedure"],
+      benefits: ["Natural, Permanent Hair Growth", "Minimally Invasive Procedure", "No Major Cuts Or Stitches", "Minimal Downtime", "Uses Your Own Hair Follicles", "One-Day Procedure"],
     },
     {
       title: "Percutaneous FUE",
-      description: "Percutaneous FUE is an advanced version of the FUE hair transplant technique performed using specialized micro-motor technology. Ultra-fine punches (0.7\u20130.8 mm) are used to carefully extract and implant grafts with precise control over depth, direction, and density \u2014 ensuring natural-looking, high-density results.",
+      description: "Percutaneous FUE is a refined and advanced form of the traditional FUE hair transplant technique, performed using specialized micro-motor technology for enhanced precision. Ultra-fine punches measuring approximately 0.7\u20130.8 mm are used to gently extract and implant individual grafts. This technique allows the surgeon to maintain precise control over the depth, direction, and density of implantation, resulting in more natural hairline design and higher-density outcomes. Percutaneous FUE also minimizes scalp trauma, supports faster healing, and ensures aesthetically superior, natural-looking results.",
       image: fueImg,
-      benefits: ["Precise control of depth, direction & density", "High graft survival rate", "Minimally invasive", "No major cuts or stitches", "One-day procedure", "Faster recovery", "High-density natural results"],
+      benefits: ["Precise Control Of Depth, Direction & Density", "High Graft Survival Rate", "Minimally Invasive", "No Major Cuts Or Stitches", "One-Day Procedure", "Faster Recovery", "High-Density Natural Results"],
     },
     {
       title: "Eyebrow Transplant",
-      description: "Eyebrows are your facial landmark. Why cover it up with pencils and liners when you can restore uniformed thickness with Eyebrow Transplant. Removing suitable hair follicles from the area around your ear and implanting it to your existing brow line helps you achieve a fuller looking eyebrow regrowth.",
+      description: "Eyebrows frame your face \u2014 so why rely on daily pencils and liners? With an Eyebrow Transplant, carefully selected hair follicles from around the ear are implanted into your brow line to restore natural thickness and fullness. The result is long-lasting, fuller eyebrows that enhance your facial features naturally.",
       image: eyebrowImg,
-      benefits: ["Achieve thicker brows", "Encourage hair regrowth", "No Visible Scars", "Attain Natural Look", "Safe and Effective"],
+      benefits: ["Achieve Thicker Brows", "Encourage Hair Regrowth", "No Visible Scars", "Attain Natural Look", "Safe And Effective"],
     },
     {
       title: "Beard Transplant",
-      description: "Men who have patchy beard or thin facial hair have a solution to undergo beard transplant. Healthy hair follicles are extracted from the donor area and then implanted to the facial skin with two extensive treatments \u2014 Basic beard transplant and Percutaneous Beard Transplant.",
+      description: "Men experiencing patchy or thin facial hair can achieve a fuller, well-defined look with a Beard Transplant. Healthy hair follicles are carefully extracted from a donor area and precisely implanted into the beard region to enhance density and shape. Two advanced options are available: Basic Beard Transplant and Percutaneous Beard Transplant, each designed to deliver natural-looking, long-lasting results.",
       image: beardImg,
-      benefits: ["Improves Density", "Fill in bald patches", "Natural Looking Facial Hair", "No minor linear scarring", "Permanent Solution"],
+      benefits: ["Improves Density", "Fill In Bald Patches", "Natural Looking Facial Hair", "No Minor Linear Scarring", "Permanent Solution"],
     },
     {
       title: "Moustache Transplant",
-      description: "With successful advances in hair transplant techniques, restoring moustache hair is now possible with Moustache Transplant. Men who could not grow moustache due to injuries or having low density can achieve thick moustache line with the grafts extracted from the donor site.",
+      description: "Thanks to advanced hair transplant techniques, restoring a fuller moustache is now possible with a Moustache Transplant. Men who are unable to grow a moustache due to low density, genetics, or past injuries can achieve a thicker, well-defined moustache line. Healthy grafts are carefully extracted from the donor area and precisely implanted to create natural-looking, long-lasting results.",
       image: mustacheImg,
-      benefits: ["Covers moustache Patches", "Highlight Masculine Features", "Can Trim or Shave the transplanted hair", "Get Natural Results", "No Visible Scars"],
+      benefits: ["Covers Moustache Patches", "Highlight Masculine Features", "Can Trim Or Shave The Transplanted Hair", "Get Natural Results", "No Visible Scars"],
     },
     {
       title: "Scalp Micropigmentation (SMP)",
-      description: "Scalp Micropigmentation is a non-invasive procedure that creates the appearance of fuller hair by depositing specialized pigments into the scalp using advanced micro-precision technology. It is an effective solution for hair thinning, alopecia, and male or female pattern baldness. Each procedure lasts approximately 4\u20135 hours.",
+      description: "Scalp Micropigmentation (SMP) is a non-invasive cosmetic procedure that creates the illusion of fuller, denser hair by depositing specialized pigments into the scalp using advanced micro-precision technology. It is an effective solution for hair thinning, alopecia, and male or female pattern baldness, helping to achieve a natural shaved-head or density-enhancing look. Each session typically lasts around 4\u20135 hours, depending on the area being treated.",
       image: scalpImg,
-      benefits: ["Creates a natural, fuller look", "Immediate visible improvement", "Safe for existing hair", "Non-surgical procedure", "Effectively camouflages hair loss"],
-    },
-    {
-      title: "Partial Alopecia",
-      description: "The main characteristic of the patchy type of alopecia areata is one or more coin-sized patches of hair loss on the skin or body. If this condition expands, it may become alopecia totalis or alopecia universalis.",
-      image: partialAlopeciaImg,
-      benefits: ["Arrests Hair fall", "Controls scalp sebum production", "Maintains the scalp PH level", "Stimulate dormant hair follicles", "Improves hair quality"],
-    },
-    {
-      title: "Total Alopecia",
-      description: "Alopecia totalis is a chronic condition of complete hair loss of the scalp, which affects a small percentage of patients with alopecia areata. Treatment outcomes are best when this disease is recognized and treated early in its course.",
-      image: totalAlopeciaImg,
-      benefits: ["Arrests Hair fall", "Controls scalp sebum production", "Maintains the scalp PH level", "Stimulate dormant hair follicles", "Improves hair quality"],
+      benefits: ["Creates A Natural, Fuller Look", "Immediate Visible Improvement", "Safe For Existing Hair", "Non-Surgical Procedure", "Effectively Camouflages Hair Loss"],
     },
     {
       title: "Microblading",
-      description: "Women believe Eyebrows enhance their facial identity. Microblading accounts for all your brow desires by implanting pigments as short strokes into the superficial layers of the skin in order to resemble natural eyebrow hairs. Procedure timing 3 hours. 1 main procedure + 2 follow up sessions.",
+      description: "Eyebrows play a key role in defining a woman\u2019s facial identity. Microblading enhances your brows by implanting fine, hair-like pigment strokes into the superficial layers of the skin, creating a natural and fuller appearance. The procedure takes approximately 3 hours and includes 1 main session followed by 2 follow-up sessions for perfect shape and long-lasting results.",
       image: microbladingImg,
-      benefits: ["Reshape your brow line", "Fuller & Denser Look", "Won\u2019t stop Natural Growth", "Quick Procedure", "Get your Dream Eyebrows"],
+      benefits: ["Reshape Your Brow Line", "Fuller & Denser Look", "Won\u2019t Stop Natural Growth", "Quick Procedure", "Get Your Dream Eyebrows"],
     },
     {
       title: "Eyelash Lift & Extensions",
-      description: "Eyelash Lift and Extensions are aesthetic procedures designed to enhance the appearance of your natural lashes. A lash lift gently elevates and curls your existing lashes. Lash extensions add length and density using carefully applied, semi-processed natural fibers for a fuller yet natural finish. The procedure typically takes about 1 hour.",
+      description: "Eyelash Lift and Extensions are aesthetic treatments that beautifully enhance your natural lashes. A lash lift gently curls and elevates your existing lashes, giving them a longer, more defined look. Lash extensions add extra length and volume using carefully applied, lightweight natural fibers for a fuller yet natural finish. The procedure is safe, comfortable, and typically completed within 1 hour.",
       image: eyelashImg,
-      benefits: ["Enhances eye definition", "Fuller and more refined appearance", "Natural-looking results", "Non-surgical procedure", "Immediate visible improvement"],
+      benefits: ["Enhances Eye Definition", "Fuller And More Refined Appearance", "Natural-Looking Results", "Non-Surgical Procedure", "Immediate Visible Improvement"],
     },
     {
       title: "Basic Thin Poly",
-      description: "The basic thin poly base is exactly what you\u2019re looking for! AdGrohair offers the finest of the thin poly base systems which suits your scalp, including some of the finest thin base hair systems on the market. The duration the systems are the longest in the entire class and offers good volume and density post final cut and design.",
+      description: "The Thin Poly Base system is the perfect choice if you\u2019re looking for a lightweight, natural-looking hair solution. AdGrohair offers premium-quality thin poly base hair systems designed to blend seamlessly with your scalp for a realistic appearance. These advanced systems are crafted for durability, long-lasting performance, and superior comfort. After the final cut and styling, they deliver excellent volume and density \u2014 giving you a confident, natural finish.",
       image: basicThinPolyImg,
-      benefits: ["Lightweight and comfortable", "Natural scalp appearance", "Good volume and density", "Long-lasting durability"],
+      benefits: ["Lightweight And Comfortable", "Natural Scalp Appearance", "Good Volume And Density", "Long-Lasting Durability"],
     },
     {
       title: "Celebrity Choice",
-      description: "AdGroHair\u2019s Celebrity Choice Hair Systems are advanced non-surgical hair replacement solutions designed to create a natural-looking hairline and seamless appearance. Available options include PU with lace front, mono with lace front, and thin skin with lace front designs \u2014 offering a balance of realism, comfort, and durability.",
+      description: "AdGroHair\u2019s Celebrity Choice Hair Systems are premium, non-surgical hair replacement solutions crafted to deliver a natural-looking hairline and seamless finish. These advanced systems are available in multiple options, including PU with lace front, Mono with lace front, and Thin skin with lace front designs \u2014 each offering the perfect balance of realism, comfort, breathability, and durability for everyday confidence.",
       image: celebrityChoiceImg,
-      benefits: ["Natural-looking hairline", "Customized base options", "Comfortable and lightweight design", "Durable and long-lasting", "Non-surgical solution", "Versatile styling options"],
+      benefits: ["Natural-Looking Hairline", "Customized Base Options", "Comfortable And Lightweight Design", "Durable And Long-Lasting", "Non-Surgical Solution", "Versatile Styling Options"],
     },
     {
       title: "Full Lace",
-      description: "The Full Lace Hair System is one of the most preferred non-surgical hair replacement options worldwide. Crafted with a lightweight and breathable lace base, it allows proper airflow to the scalp, ensuring comfort throughout the day. The lace construction provides a seamless hairline and natural movement.",
+      description: "The Full Lace Hair System is one of the most popular non-surgical hair replacement solutions worldwide. Designed with a lightweight, breathable lace base, it allows optimal airflow to the scalp for all-day comfort. The fine lace construction creates a seamless, natural-looking hairline and ensures realistic hair movement for an undetectable finish.",
       image: fullLaceImg,
-      benefits: ["Highly natural hairline appearance", "Lightweight and breathable design", "Comfortable for daily wear", "Seamless blending with existing hair", "Flexible styling options"],
+      benefits: ["Highly Natural Hairline Appearance", "Lightweight And Breathable Design", "Comfortable For Daily Wear", "Seamless Blending With Existing Hair", "Flexible Styling Options"],
     },
     {
       title: "Hair Extension",
-      description: "Remy Hair Extensions are crafted from high-quality, virgin human hair with intact and aligned cuticles to ensure a smooth, natural appearance. These extensions are an effective solution for adding volume, length, or style enhancement while blending seamlessly with your existing hair.",
+      description: "Remy Hair Extensions are made from premium virgin human hair with intact, aligned cuticles to maintain a smooth, tangle-free, and natural appearance. They are an ideal solution for adding instant volume, length, or style enhancement, blending seamlessly with your natural hair for a flawless, long-lasting finish.",
       image: hairExImg,
-      benefits: ["100% high-quality human hair", "Soft, smooth, and natural texture", "Adds volume and length instantly", "Blends seamlessly with natural hair"],
+      benefits: ["100% High-Quality Human Hair", "Soft, Smooth, And Natural Texture", "Adds Volume And Length Instantly", "Blends Seamlessly With Natural Hair"],
     },
     {
       title: "Men Full Cap",
-      description: "The Men Full Cap Hair System is a complete coverage solution designed for individuals experiencing extensive hair loss, including conditions such as alopecia totalis, alopecia universalis, or hair loss due to medical treatments like chemotherapy. It is fully customized to match the scalp size, shape, and specific hair loss pattern.",
+      description: "The Men Full Cap Hair System is a complete coverage, non-surgical solution designed for individuals experiencing extensive hair loss \u2014 including conditions like alopecia totalis, alopecia universalis, or hair loss due to medical treatments such as chemotherapy. Fully customized to match your scalp size, head shape, and specific hair loss pattern, this system ensures a secure fit, natural appearance, and comfortable all-day wear \u2014 restoring both hair and confidence.",
       image: menFullCapImg,
-      benefits: ["Full scalp coverage", "Designed for advanced hair loss conditions", "Customized fit and design", "Natural appearance"],
+      benefits: ["Full Scalp Coverage", "Designed For Advanced Hair Loss Conditions", "Customized Fit And Design", "Natural Appearance"],
     },
     {
       title: "Women Full Cap",
-      description: "The Women Full Cap Hair System is a complete coverage solution designed for women experiencing extensive hair loss. Available in lengths ranging from 14 to 22 inches, the system allows versatile styling, including braids, ponytails, and various customized hairstyles.",
+      description: "The Women Full Cap Hair System is a complete coverage, non-surgical solution designed for women experiencing extensive hair loss. Available in lengths ranging from 14 to 22 inches, it offers the flexibility to style your hair in multiple ways \u2014 including braids, ponytails, and other customized hairstyles \u2014 while maintaining a natural look and comfortable fit.",
       image: womenFullCapImg,
-      benefits: ["Full scalp coverage", "Designed for medical hair loss conditions", "Custom fit and natural appearance", "Available in multiple lengths", "Allows flexible styling options", "Non-surgical and comfortable solution"],
+      benefits: ["Full Scalp Coverage", "Designed For Medical Hair Loss Conditions", "Custom Fit And Natural Appearance", "Available In Multiple Lengths", "Allows Flexible Styling Options", "Non-Surgical And Comfortable Solution"],
     },
   ];
 
   const skinTreatments = [
     {
       title: "Skin Peels",
-      description: "We offer a range of advanced, medically guided skin peels designed to improve skin texture, reduce pigmentation, control acne, and restore natural radiance. Our treatments include Glycolic Peel, ArgiPeel Exfoliating Peel, Ferulac Peel Booster System, Lacti Peel, Amelan Peel, Nomelan Peel, Yellow Peel, and Salicylic Acid Peel.",
+      description: "We provide a comprehensive range of advanced, medically guided skin peels designed to enhance skin texture, reduce pigmentation, control acne, and restore your natural glow. Our specialized peel treatments include Glycolic Peel, ArgiPeel Exfoliating Peel, Ferulac Peel Booster System, Lacti Peel, Amelan Peel, Nomelan Peel, Yellow Peel, and Salicylic Acid Peel \u2014 each carefully selected to address specific skin concerns and deliver safe, visible results.",
       image: skinPeelsImg,
-      benefits: ["Improves skin texture", "Reduces pigmentation", "Controls acne", "Restores natural radiance"],
+      benefits: ["Improves Skin Texture", "Reduces Pigmentation", "Controls Acne", "Restores Natural Radiance"],
     },
     {
       title: "Microdermabrasion",
-      description: "Microdermabrasion is a dermatological procedure that gently removes the top layer of skin. It is used to even out skin tones, fade acne scars, and brighten a dull complexion. The procedure takes about 30 minutes and may be combined with other treatments.",
+      description: "Microdermabrasion is a gentle dermatological treatment that exfoliates and removes the outermost layer of dead skin cells. It helps even out skin tone, reduce the appearance of acne scars, and restore brightness to dull skin. The procedure typically takes around 30 minutes and can be safely combined with other treatments for enhanced results.",
       image: microdermabrasionImg,
-      benefits: ["Evens out skin tone", "Fades acne scars", "Brightens complexion", "Quick 30-minute procedure"],
+      benefits: ["Evens Out Skin Tone", "Fades Acne Scars", "Brightens Complexion", "Quick 30-Minute Procedure"],
     },
     {
       title: "Q-Switched Lasers",
-      description: "At GloSkin, Q-Switched Laser technology is used to effectively treat pigmentation, melasma, sun damage, and various pigmented lesions such as age spots, freckles, sunspots, and certain birthmarks. The laser precisely targets excess melanin in the skin without affecting surrounding tissue. It can also be customized for safe tattoo removal.",
+      description: "At GloSkin, advanced Q-Switched Laser technology is used to effectively treat pigmentation concerns such as melasma, sun damage, and various pigmented lesions including age spots, freckles, sunspots, and certain birthmarks. The laser works by precisely targeting excess melanin in the skin without damaging the surrounding tissue, ensuring safe and effective results. It can also be customized for safe and efficient tattoo removal, delivering clearer and more even-toned skin.",
       image: qSwitchedLaserImg,
-      benefits: ["Targets pigmentation & melasma", "Stimulates collagen production", "Improves acne scars", "Refines enlarged pores"],
+      benefits: ["Targets Pigmentation & Melasma", "Stimulates Collagen Production", "Improves Acne Scars", "Refines Enlarged Pores"],
     },
     {
       title: "Nd-YAG Laser",
-      description: "Nd-YAG laser is a newer technique of laser hair removal. Its biggest advantage is that it usually works on all types of skin, in particular, even on tanned skin and on darker skin. For optimum results, 6-8 sessions are recommended at a gap of 1 month between each session.",
+      description: "Nd:YAG Laser is an advanced and highly effective technique for long-term hair reduction. One of its greatest advantages is its suitability for all skin types \u2014 including tanned and darker skin tones \u2014 making it a safe and versatile option. For optimal and long-lasting results, 6\u20138 sessions are typically recommended, with a gap of about one month between each session.",
       image: ndyagLaserImg,
-      benefits: ["Works on all skin types", "Safe for tanned & darker skin", "Permanent hair reduction", "Clinically proven technology"],
+      benefits: ["Works On All Skin Types", "Safe For Tanned & Darker Skin", "Permanent Hair Reduction", "Clinically Proven Technology"],
     },
     {
       title: "Diode Laser",
-      description: "Diode lasers use a single wavelength of light that has a high absorption rate in melanin. It incorporates skin cooling to protect the surface of the skin. As the melanin heats up it destroys the root and blood flow to the follicle and disables the hair permanently.",
+      description: "Diode Laser hair removal uses a single, highly targeted wavelength of light that is strongly absorbed by melanin in the hair follicle. The system includes advanced skin-cooling technology to protect the surface of the skin while delivering effective energy to the root. As the melanin heats up, it safely damages the follicle and disrupts its blood supply, leading to long-term and permanent hair reduction.",
       image: diodeLaserImg,
-      benefits: ["High melanin absorption", "Built-in skin cooling", "Permanent hair removal", "Safe for all skin types"],
+      benefits: ["High Melanin Absorption", "Built-In Skin Cooling", "Permanent Hair Removal", "Safe For All Skin Types"],
     },
     {
       title: "RF Facials",
-      description: "Radiofrequency (RF) technology uses high-frequency radio waves to safely and precisely remove skin lesions such as moles, warts, skin tags, freckles, and DPNs. Compared to traditional scalpel excision, RF treatment generates minimal heat and reduces impact on surrounding tissues, promoting faster healing.",
+      description: "Radiofrequency (RF) technology uses controlled high-frequency radio waves to safely and precisely remove skin lesions such as moles, warts, skin tags, freckles, and DPNs. Unlike traditional scalpel excision, RF treatment delivers minimal thermal damage to surrounding tissues, ensuring greater precision, reduced bleeding, and faster healing with minimal discomfort.",
       image: rfFacialsImg,
-      benefits: ["Precise lesion removal", "Minimal bleeding", "Faster healing", "Safe and effective"],
-    },
-    {
-      title: "Botox (Botulinum Toxins)",
-      description: "Botox from Allergan is one of the widely known brands of Botulinum toxins injections along with Dysport from Galderma. Botulinum toxins are neurotoxins that affect nerves and cause muscle relaxation. It halts the ageing process of the muscles and smoothens out wrinkles and dynamic lines. The effects generally last from 3 to 5 months.",
-      image: botoxImg,
-      benefits: ["Smoothens wrinkles", "Relaxes dynamic lines", "Quick procedure", "Results last 3-5 months"],
+      benefits: ["Precise Lesion Removal", "Minimal Bleeding", "Faster Healing", "Safe And Effective"],
     },
     {
       title: "Dermal Fillers",
-      description: "Dermal fillers are injections that plump up wrinkles and smooth lines on your face. We usually inject dermal fillers in the areas around your eyes, mouth and nose. Results are noticeable right away and recovery time is minimal. We use Dermal fillers from Allergan as Juvederm and also Restylane from Galderma.",
+      description: "Dermal fillers are injectable treatments designed to restore lost volume, smooth wrinkles, and soften facial lines. They are commonly administered around the eyes, nose, and mouth to enhance facial contours and rejuvenate your appearance. Results are visible immediately, with minimal downtime and quick recovery. We use premium, internationally trusted fillers such as Juvederm by Allergan and Restylane by Galderma to ensure safe, natural-looking, and long-lasting results.",
       image: dermaFillersImg,
-      benefits: ["Instant visible results", "Restores facial volume", "Minimal recovery time", "Long-lasting effects"],
+      benefits: ["Instant Visible Results", "Restores Facial Volume", "Minimal Recovery Time", "Long-Lasting Effects"],
     },
     {
       title: "Face PRP",
-      description: "A Platelet Rich Plasma (PRP) face treatment, also known as a Vampire facial, is an advanced skin treatment which is great for skin rejuvenation. It uses your own blood platelets to stimulate new cell growth, helping to improve your complexion and skin texture. PRP therapy stimulates the production of collagen and new skin cells.",
+      description: "A Platelet-Rich Plasma (PRP) face treatment, commonly known as a Vampire Facial, is an advanced skin rejuvenation procedure designed to restore youthful glow and texture. This treatment uses your own blood platelets, rich in natural growth factors, to stimulate new cell regeneration. PRP therapy boosts collagen production, improves skin texture, enhances complexion, and promotes healthier, firmer-looking skin \u2014 all with a natural and minimally invasive approach.",
       image: facePrpImg,
-      benefits: ["Stimulates collagen production", "Uses your own blood platelets", "Improves skin texture", "Natural skin rejuvenation"],
+      benefits: ["Stimulates Collagen Production", "Uses Your Own Blood Platelets", "Improves Skin Texture", "Natural Skin Rejuvenation"],
     },
     {
       title: "HydraFacial",
-      description: "HydraFacial is an advanced skin treatment that combines cleansing, exfoliation, gentle chemical peeling, extraction, and deep hydration in a single session using patented vortex technology. Suitable for all skin types, HydraFacial helps improve enlarged pores, fine lines, acne, and dullness.",
+      description: "HydraFacial is an advanced, multi-step skin treatment that combines cleansing, exfoliation, gentle chemical peeling, extraction, and intense hydration in a single session using patented vortex technology. Suitable for all skin types, it helps minimize enlarged pores, reduce fine lines, control acne, and restore a brighter, healthier-looking complexion \u2014 all with no downtime and instant glow.",
       image: hydrafacialImg,
-      benefits: ["Deep cleansing & exfoliation", "Suitable for all skin types", "Improves pores & fine lines", "Instant hydration & glow"],
+      benefits: ["Deep Cleansing & Exfoliation", "Suitable For All Skin Types", "Improves Pores & Fine Lines", "Instant Hydration & Glow"],
     },
   ];
 
@@ -587,16 +566,19 @@ const GrohairLanding = () => {
                   onChange={handleInputChange}
                   required
                 />
-                <input
-                  type="date"
-                  name="date"
-                  className={styles.formInput}
-                  value={formData.date}
-                  onChange={handleInputChange}
-                  min={new Date().toISOString().split("T")[0]}
-                  max="2099-12-31"
-                  required
-                />
+                <div className={styles.formDateWrapper}>
+                  {!formData.date && <span className={styles.formDateLabel}>Select Date</span>}
+                  <input
+                    type="date"
+                    name="date"
+                    className={styles.formInput}
+                    value={formData.date}
+                    onChange={handleInputChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    max="2099-12-31"
+                    required
+                  />
+                </div>
               </div>
               <div className={styles.formRow}>
                 <select

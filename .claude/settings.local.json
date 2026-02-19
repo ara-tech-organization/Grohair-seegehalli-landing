@@ -5,7 +5,8 @@
       "Bash(npm install:*)",
       "Bash(node -e:*)",
       "Bash(npx gh-pages-clean:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
