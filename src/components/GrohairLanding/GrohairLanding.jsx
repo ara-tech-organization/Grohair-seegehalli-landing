@@ -571,7 +571,7 @@ const GrohairLanding = () => {
                   <input
                     type="date"
                     name="date"
-                    className={styles.formInput}
+                    className={`${styles.formInput} ${!formData.date ? styles.formDateEmpty : ''}`}
                     value={formData.date}
                     onChange={handleInputChange}
                     min={new Date().toISOString().split("T")[0]}

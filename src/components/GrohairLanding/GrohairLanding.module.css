@@ -237,6 +237,14 @@
   pointer-events: none;
 }
 
+.formDateEmpty {
+  color: transparent !important;
+}
+
+.formDateEmpty::-webkit-datetime-edit {
+  color: transparent;
+}
+
 .successMessage {
   background: rgba(76, 175, 80, 0.2);
   border: 1px solid #4caf50;
