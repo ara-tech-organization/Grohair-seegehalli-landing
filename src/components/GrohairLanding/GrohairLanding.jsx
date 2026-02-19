@@ -645,7 +645,7 @@ const GrohairLanding = () => {
                 className={styles.submitBtn}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Book Appointment"}
+                {isSubmitting ? "Sending..." : "Book An Appointment"}
               </button>
             </form>
           </div>
