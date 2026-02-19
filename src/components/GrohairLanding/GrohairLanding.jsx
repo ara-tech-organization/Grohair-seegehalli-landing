@@ -534,7 +534,7 @@ const GrohairLanding = () => {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.appointmentForm}>
-            <h1 className={styles.heroTitle}>Book Your Appointment</h1>
+            <h1 className={styles.heroTitle}>Book An Appointment</h1>
             <form onSubmit={handleSubmit}>
               <div className={styles.formRow}>
                 <input

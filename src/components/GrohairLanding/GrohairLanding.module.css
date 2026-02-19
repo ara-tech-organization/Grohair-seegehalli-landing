@@ -232,6 +232,8 @@
   transform: translateY(-50%);
   color: #ffffff;
   font-size: 16px;
+  font-family: inherit;
+  font-weight: 400;
   pointer-events: none;
 }
 
