@@ -17,7 +17,7 @@ import scalpImg from "../../assets/treatments/smp.png";
 import microbladingImg from "../../assets/treatments/microblading.png";
 import eyelashImg from "../../assets/treatments/eyelash-extensions.png";
 import basicThinPolyImg from "../../assets/treatments/basic-thin-poly.png";
-import celebrityChoiceImg from "../../assets/treatments/celebrity-choice.png";
+// import celebrityChoiceImg from "../../assets/treatments/celebrity-choice.png";
 import fullLaceImg from "../../assets/treatments/full-lace.png";
 import hairExImg from "../../assets/treatments/hair-extension.png";
 import menFullCapImg from "../../assets/treatments/men-full-cap.png";
@@ -157,12 +157,7 @@ const GrohairLanding = () => {
       image: basicThinPolyImg,
       benefits: ["Lightweight And Comfortable", "Natural Scalp Appearance", "Good Volume And Density", "Long-Lasting Durability"],
     },
-    {
-      title: "Celebrity Choice",
-      description: "AdGroHair\u2019s Celebrity Choice Hair Systems are premium, non-surgical hair replacement solutions crafted to deliver a natural-looking hairline and seamless finish. These advanced systems are available in multiple options, including PU with lace front, Mono with lace front, and Thin skin with lace front designs \u2014 each offering the perfect balance of realism, comfort, breathability, and durability for everyday confidence.",
-      image: celebrityChoiceImg,
-      benefits: ["Natural-Looking Hairline", "Customized Base Options", "Comfortable And Lightweight Design", "Durable And Long-Lasting", "Non-Surgical Solution", "Versatile Styling Options"],
-    },
+    
     {
       title: "Full Lace",
       description: "The Full Lace Hair System is one of the most popular non-surgical hair replacement solutions worldwide. Designed with a lightweight, breathable lace base, it allows optimal airflow to the scalp for all-day comfort. The fine lace construction creates a seamless, natural-looking hairline and ensures realistic hair movement for an undetectable finish.",
